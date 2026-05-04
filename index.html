@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Revisión de Programación · Musicala</title>
+  <meta name="description" content="Aplicativo de revisión diaria y semanal de programación, salones, canje de sesiones, observaciones y pendientes de Musicala." />
+  <meta name="theme-color" content="#7c3aed" />
+  <meta name="color-scheme" content="light" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo-wrap">
+          <img src="./logo.png" alt="Logo Musicala" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+          <div class="brand-fallback" aria-hidden="true">M</div>
+        </div>
+        <div>
+          <p class="eyebrow">Musicala · Operación</p>
+          <h1>Revisión de programación</h1>
+          <p class="header-copy">Control diario y semanal de clases, salones, canjes, novedades y oportunidades de cortesía.</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <span id="apiStatus" class="status-pill status-neutral">Conectando…</span>
+        <button class="btn btn-ghost" id="btnRefresh" type="button">Actualizar</button>
+      </div>
+    </header>
+
+    <nav class="top-nav" aria-label="Navegación principal">
+      <button class="nav-btn is-active" data-view="home" type="button">Inicio</button>
+      <button class="nav-btn" data-view="history" type="button">Historial</button>
+      <button class="nav-btn" data-view="observations" type="button">Observaciones</button>
+      <button class="nav-btn" data-view="pending" type="button">Pendientes</button>
+      <button class="nav-btn" data-view="setup" type="button">Configuración</button>
+    </nav>
+
+    <main id="app" class="app-main" tabindex="-1">
+      <section class="loading-card">
+        <div class="loader"></div>
+        <p>Cargando el aplicativo…</p>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
